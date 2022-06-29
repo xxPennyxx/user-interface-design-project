@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+    <head>
+        <title>Sign Up Page</title>
+        <script>
+            function onFocus(input)
+        {
+            input.style.background="yellowgreen";
+            
+            
+        }
+        function onBlur(input){
+            input.style.background="yellow";
+        }
+            function f_name_validation(name) {
+                var i=0;
+                var n_v=true;
+               
+                if(name.length<3){
+                    window.alert("First name should exceed three(3) characters!!");
+                    n_v=false;
+                }
+                for(i=0;i<name.length;i++){
+                    if(!((name.charAt(i)==" ")||(name.charAt(i)>='a'&&name.charAt(i)<='z')||(name.charAt(i)>='A'&&name.charAt(i)<='Z'))){
+                        window.alert("First name should contain only ALPHABETS!!")
+                        n_v=false;
+                        break;
+                    }
+                
+                }
+                
+                return n_v;
+            }
+            function l_name_validation(name) {
+                var i=0;
+                var n_v=true;
+                if(name.length<3){
+                    window.alert("Last name should exceed three(3) characters!!");
+                    n_v=false;
+                }
+                for(i=0;i<name.length;i++){
+                    if(!((name.charAt(i)==" ")||(name.charAt(i)>='a'&&name.charAt(i)<='z')||(name.charAt(i)>='A'&&name.charAt(i)<='Z'))){
+                        window.alert("Last name should contain only ALPHABETS!!")
+                        n_v=false;
+                        break;
+                    }
+                }
+                return n_v;
+            }
+            function age__validation(age) {
+                a_v = true;
+                if (age<0||age>100){
+                alert("Invalid Age");
+                a_v = false;
+                }
+                else if (age <18){
+                    alert("You are under age!!");
+                    a_v = false;
+                }
+                
+                return a_v;
+            }
+            function mobno_validation(mobno) {
+                var mobno_v = true;
+                if(mobno.length != 10){
+                    alert("Invalid mobile number");
+                    mobno_v = false;                
+                }                 
+            return mobno_v ;
+            }
+            function email_validation(email) {
+                var eid_v = true;
+                var e_l = email.length;
+                if(!(email.substr(e_l-10,10)== "@gmail.com")){
+                    alert("Invalid Email-id (you can access this page ony through GOOGLE account)")
+                    eid_v = false
+                }
+                return eid_v;
+            }
+            function pwd_validation(pass) {
+                var i, pass_v1=false,pass_v2=false,pass_v3=false,pass_v4=false,pass_v=true;
+                var p_l = pass.length;
+                if(p_l<8){
+                    pass_v=false;
+                    alert("Password must have a minimum of 8 characters");
+                    return pass_v;
+                }
+                for(i=0;i<=p_l-1;i++){
+                    if(pass.charAt(i)>='A' && pass.charAt(i)<='Z')
+                    {pass_v1 = true;break;}
+                }
+                for(i=0;i<=p_l-1;i++){
+                    if(pass.charAt(i)>='a' && pass.charAt(i)<='z')
+                    {pass_v2 = true;break;}
+                }
+                for(i=0;i<=p_l-1;i++){
+                    if(pass.charAt(i)=='0'||pass.charAt(i)=='1'||pass.charAt(i)=='2'||pass.charAt(i)=='3'||pass.charAt(i)=='4'||pass.charAt(i)=='5'||pass.charAt(i)=='6'||pass.charAt(i)=='7'||pass.charAt(i)=='8'||pass.charAt(i)=='9')
+                    {pass_v3 = true;break;}
+                }
+                for(i=0;i<=p_l-1;i++){
+                    if(pass.charAt(i)=='!'||pass.charAt(i)=='@'||pass.charAt(i)=='#'||pass.charAt(i)=='$'||pass.charAt(i)=='_'||pass.charAt(i)=='&')
+                    {pass_v4 = true;break;}
+                }if(!(pass_v&&pass_v1&&pass_v2&&pass_v3&&pass_v4)){
+                    alert("Your password must contain an UPPERCASE, a LOWERCASE alphabets, a DIGIT and a SPECIAL CHARACTER");
+                }
+                return pass_v&&pass_v1&&pass_v2&&pass_v3&&pass_v4;
+            }
+            function con_pass(p1,p2) {
+                if(p1.localeCompare(p2)!=0){
+                    alert("The CONFIRMED password doesnot match to the FIRST ENTERED password")
+                    return false;
+                }
+                else{
+                    return true;
+                }
+                
+            }
+
+            function form_validate (){
+                var firstname = document.record.f_name.value;
+                var f_n_v = f_name_validation(firstname);
+                if (f_n_v == false){
+                    document.record.f_name.value = null;
+                    return f_n_v ; 
+                }
+                var lastname = document.record.l_name.value;
+                var l_n_v = l_name_validation(lastname);
+                if (l_n_v == false){
+                    document.record.l_name.value = null;
+                    return l_n_v;
+                }
+                var age = document.record.age.value;
+                var age_v = age__validation(age);
+                if (age_v == false){
+                    document.record.age.value = null;
+                    return age_v;
+                }
+                var mobile = document.record.mob_no.value;
+                var m_n_v = mobno_validation(mobile);
+                if(m_n_v == false){
+                    document.record.mob_no.value = null;
+                    return m_n_v;
+                }
+                var email_id = document.record.eid.value;
+                var e_v = email_validation(email_id);
+                if(e_v == false){
+                    document.record.eid.value = null;
+                    return e_v;
+                }
+                var paswrd = document.record.pwd1.value;
+                var p_v = pwd_validation(paswrd);
+                if(p_v == false){
+                    document.record.pwd1.value = null;
+                    return p_v;
+                }
+                var pw1 = document.record.pwd1.value;
+                var pw2 = document.record.pwd2.value;
+                var c_p_v = con_pass(pw1,pw2);
+                if(c_p_v == false){
+                    document.record.pwd2.value = null;
+                    return c_p_v;
+                }
+               return true;
+            }
+            function home(){
+                window.location.href="Welcome Page(JS).html";
+            }
+            function check_details(){
+                var f_n = document.record.f_name.value;
+                var l_n =document.record.l_name.value;
+                var age = document.record.age.value;
+                var gen = document.record.gender.value;
+                var mob = document.record.mob_no.value;
+                var eid = document.record.eid.value;
+                var pwd = document.record.pwd1.value;
+                
+                var c_d = form_validate();
+                if(c_d == true ){
+                document.write("<body background='https://thumbs.dreamstime.com/b/halloumi-burger-fresh-lettuce-tomato-cucumber-red-onion-addition-yoghurt-mint-sauce-wooden-rustic-table-118076074.jpg' style='background-size:100% 100%;background-repeat: no-repeat;backdrop-filter: blur(10px);';>");
+                document.write("<center>");
+                document.write("<h1 style='color:orange;font-size:52px;'>"+"<u>DETAILS</u>"+"</h1>");
+                document.write("<table border='10' cellpadding='20' cellspacing='25' style='background-color:yellow;color:orangered;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;font-size:26px;'>");
+                document.write("<tr>");
+                document.write("<td>"+"NAME"+"</td>"+"<td>"+f_n.toLocaleUpperCase()+" "+l_n.toLocaleUpperCase()+"</td>");
+                document.write("</tr>");
+                document.write("<tr>");
+                document.write("<td>"+"AGE"+"</td>"+"<td>"+age+"</td>");
+                document.write("</tr>");
+                document.write("<tr>");
+                document.write("<td>"+"GENDER"+"</td>"+"<td>"+gen+"</td>");
+                document.write("</tr>");
+                document.write("<tr>");
+                document.write("<td>"+"MOBILE NUMBER"+"</td>"+"<td>"+mob+"</td>");
+                document.write("</tr>");
+                document.write("<tr>");
+                document.write("<td>"+"EMAIL ADDRESS"+"</td>"+"<td>"+eid+"</td>");
+                document.write("</tr>");
+                document.write("<tr>");
+                document.write("<td>"+"PASSWORD"+"</td>"+"<td>"+pwd+"</td>");
+                document.write("</tr>");
+                document.write("</table>");
+                document.write("</center>");
+                document.write("<br><br>")
+                document.write("<center><button style=' background-color: yellow;border-radius: 30px;height: 35px;width: 275px;box-shadow: 5px 5px 39px black;font-size: 25px;margin: 13px;color: white;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;cursor: pointer;'><a href='order page js.html' style='text-decoration:none;color:orange;'>"+"PROCEED"+"</a></button></center>");
+                document.write("</body>");
+                }
+                else{
+                    alert("Please fill all the fields to get details.");
+                }
+            }
+        </script>
+        <style>
+            input {
+                background-color: yellow;
+                height: 26px;
+                width: 195px; 
+                box-shadow: 1px 1px 30px black;
+            }
+            .inputlabels {
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                color: white;
+                font-size: 26px;
+                text-shadow: 1px 1px 30px black;
+            }
+            .traverse {
+                 background-color: orange;
+                border-radius: 30px;
+                height: 50px;
+                width: 390px;
+                box-shadow: 5px 5px 39px black;
+                font-size: 39px;
+                margin: 13px;
+                color: white;
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body background="https://thumbs.dreamstime.com/b/halloumi-burger-fresh-lettuce-tomato-cucumber-red-onion-addition-yoghurt-mint-sauce-wooden-rustic-table-118076074.jpg" style="background-size:100% 100%;background-repeat: no-repeat;">
+        <div style="background-color:rgb(255, 153, 0)">
+            <center>
+            <table style="border-radius: 30px;">
+                <tr><td style="font-size: 50px;color: rgb(255, 251, 0);border: rgb(255, 251, 0);border-width: 5px;border-style: solid;"><center>FOOD DELIVERY</td><td rowspan="2"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTts8wr7DR-KCGfncnZ6eqv9Ipr-Qh_2kHrbw&usqp=CAU" height="250" width="600"></td></tr>
+                <tr><td style="font-size: 20px;color: rgb(255, 251, 0)">"You Don't Need To Have A Silver Fork To Eat Good Food."<sub>-PAUL PRUDHOMME</sub></td></tr>
+            </table>
+            </center></div><br><br><hr color="orange" height="10"><hr color="orange" height="10"><br><br>
+            <center>
+                <table style="background-color: rgba(255, 166, 0, 0.658);border-radius: 30px;" cellspacing = "39px">
+                <tr colspan = "3"><td>
+                <h1 style ="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;color: white;font-size: 40px;text-shadow: 1px 1px 30px black;text-indent: 250px;"><b><u>Enter Your Details Below</u></b></h1>
+            </td></tr>
+                <form name="record" onsubmit="return form_validate()" action="order page js.html">
+                        <tr><td class="inputlabels"> NAME </td><td class="inputlabels">:</td><td><input type="text" id="f_name" name="f_name" value="" placeholder="First Name" onfocus="onFocus(this)" onblur="onBlur(this)"  required></td></tr>
+                        <tr><td class="inputlabels">LAST NAME </td><td class="inputlabels">:</td> <td><input type="text" id="l_name" name="l_name" value="" placeholder="Last Name" onfocus="onFocus(this)" onblur="onBlur(this)"  required></td>
+                        <tr><td class="inputlabels">AGE </td><td class="inputlabels">:</td><td><input type="number" id="age" name="age" placeholder="Age" onfocus="onFocus(this)" onblur="onBlur(this)"  required></td>
+                        <tr><td rowspan="2" class="inputlabels">GENDER </td><td rowspan="2" class="inputlabels">:</td><td><label  style ="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;color: white;font-size: 20px;text-shadow: 1px 1px 30px black;">Male<input type="radio" id="male" name="gender" value="Male" required style="box-shadow: none;"></label></td>
+                                 <tr><td><label style ="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;color: white;font-size: 20px;text-shadow: 1px 1px 30px black;">Female<input type="radio" id="female" name="gender" value="Female" required style="box-shadow: none;"></label></td>
+                        <tr><td class="inputlabels">MOBILE NUMBER </td><td class="inputlabels">:</td><td><input type="tel" name="mob_no" id="mob_no" value="" placeholder="Mobile Number" onfocus="onFocus(this)" onblur="onBlur(this)"  required></td></tr>
+                        <tr><td class="inputlabels">EMAIL ADRESS </td><td class="inputlabels">:</td><td><input type="email" id="email" name="eid" value="" placeholder="Email-id" onfocus="onFocus(this)" onblur="onBlur(this)"  required></td>
+                        <tr><td class="inputlabels">PASSWORD </td><td class="inputlabels">:</td><td><input type="password" id="pwd1" name="pwd1" value="" placeholder="Password" onfocus="onFocus(this)" onblur="onBlur(this)"  required></td>
+                        <tr><td class="inputlabels">CONFIRM PASSWORD </td><td class="inputlabels">:</td><td><input type="password" id="pwd2" name="pwd2" value="" placeholder="Confirm Password" onfocus="onFocus(this)" onblur="onBlur(this)"  required></td></tr>
+                        </table>
+                        <br><br>
+                        <input type="button" value="Home" title="Return to home" name="return" id="return" onclick="home()" class="traverse"><input type="submit" value="Submit Details" class="traverse">
+                        <center><input type="button" value="Get Details" onclick="check_details()" class="traverse"></center>
+                    </form>
+                
+                
+                
+                </center>
+            <br><br><hr color="orange" height="10"><hr color="orange" height="10"><br><br>
+            <div style="background-color: rgb(255, 153, 0); color: yellow;text-align: center;font-size: 40px">FOOD IS ON THE WAY</div>
+    </body>
+</html>

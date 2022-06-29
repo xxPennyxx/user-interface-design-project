@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Welcome Page</title>
+        <script>
+            function order() {
+                alert("Please Click on 'ORDER NOW' to order this ")
+            }
+            function city(city1) {
+                alert("You just clicked on the city "+ city1 +". And yes we will deliver to that city.")                
+            }
+            function confirm(con) {
+                if(con=="yes"){
+                    alert("Procced further to order food !!!")
+                }
+                if(con=="no"){
+                    alert("Sorry, our services are out of your reach !!!")
+                }    
+            }
+            function redirect(){
+                window.location.href="Signup(JS).html";
+            }
+        </script>
+        <style>
+            body {
+                 background-image: url("https://wallpaperaccess.com/full/767283.jpg");
+                 background-repeat: no-repeat;
+                 background-size: 100% 100%;
+                 backdrop-filter: blur(5px);
+                 background-attachment: fixed;
+            }  
+            div.heading {
+                background-color: orangered;
+                color: white;
+                font-size: 65px;
+                text-align: center;
+                font-family: Arial, Helvetica, sans-serif;
+                border-radius: 20px;
+            }  
+            
+            a {
+                text-decoration: none;
+                color: white;
+                font-family: Arial, Helvetica, sans-serif;
+                background-color: orange ;
+                border-radius: 10px;
+            }
+            .h {
+                background-color: orange;
+                color: midnightblue;
+            }
+            .image {
+                border-radius: 39px;
+                height: 100px;
+                width: 200px;
+            }         
+            .specials {
+                font-size: 39px;
+                font-family: Arial, Helvetica, sans-serif;
+                color:white;
+                border: white dotted;
+                background-color: orangered;
+            }   
+            .button {
+                background-color: orange;
+                border: none;
+                color: white;
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                font-size: 16px;
+                margin: 4px 2px;
+                cursor: pointer;
+            }
+            .food_pic {
+                box-shadow: 1px 1px 20px black;
+                border-radius: 20px;
+                height: 150px;
+                width: 200px;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+        <body>
+            <hr color="orange"><hr color="orange">
+            <div class="heading">F<span>&#128523</span><span>&#128525</span>D ORDERING SYSTEM</div>
+            <hr color="orange"><hr color="orange">
+            <div style="background-color: rgb(255, 69, 0, .5);border-radius: 50px;">
+            <h1 style="text-align: center;"><span class="h">Welcome to Food Ordering System</span></h1>
+            <center><span style="color: white;">Double-Click here to order now</span><br>&#128071</center>
+            <center><button ondblclick="redirect()" style="background-color: rgba(255, 68, 0, 0);border-radius: 50px; cursor: pointer;border-color: rgba(255, 166, 0, 0);box-shadow: 1px 1px 20px black;"><img src="https://freepngimg.com/thumb/order_now_button/25540-6-order-now-hd.png" width='150' height='50' ></button></center>
+            <br><br>
+            <center>
+               <table cellspacing="40px" style="background-color: orange;border: white;box-shadow: 1px 1px 30px black;">
+                    <tr><td rowspan="2"> <span style="font-size: 50px;text-shadow: 1px 1px 20px black;">&#128073</span></td><td rowspan="2"><a href="#abtus" style="box-shadow: 1px 1px 20px black;">ABOUT US</a></td><td><a href="#specials"><img src="https://wallpaperaccess.com/full/767252.jpg" class="image" style="box-shadow: 1px 1px 20px black;"><br><center><span style="background-color: yellow;color: black;">SPECIALS</span></center></a></td><td><a href="#price"><img src="https://www.freepnglogos.com/uploads/chef-png/chef-sitar-knoxville-authentic-indian-restaurant-29.png" class="image" style="box-shadow: 1px 1px 20px black;"><br><center><span style="background-color: yellow;text-align: center;color:black">PRICES</span></center></td></a></td><td rowspan="2"><a href="mailto:serathchandra113@gmail.com" title="We are open to suggestions and feedbacks" style="box-shadow: 1px 1px 20px black;">CONTACT US</a></td><td rowspan="2"> <span style="font-size: 50px;text-shadow: 1px 1px 20px black;">&#128072</span></td></tr>
+                </table>
+            </center>
+            <br><br></div><br><br><hr color="orange"><hr color="orange">
+            <h1 class="specials" id="specials">FEATURED PRODUCTS :</h1>
+            <table cellspacing="30px" style="margin-left: 234px;">
+                <tr><td onclick="order()"><img src="https://cdn.livekindly.co/wp-content/uploads/2019/10/vegan-plant-based-burger-king.jpg" title="Crispy Veg" class="food_pic"><td onclick="order()"><img src="https://www.frozenfoodeurope.com/wp-content/uploads/2017/03/Crispy.jpg" title="Crispy chicken" class="food_pic"><td onclick="order()"><img src="https://i.insider.com/5d2c933b21a86101774c3c3e?width=700" title="Spicy Non-veg meal" class="food_pic"><td onclick="order()"><img src="https://burgerking-image.s3.amazonaws.com/16176882881x1119x540jpg" title="Veg double party" class="food_pic"></tr>
+                <tr><td onclick="order()"><img src="https://online.kfc.co.in/Content/OnlineOrderingImages/Menu/Items/classic-chicken-zinger-combo.jpg?v=15.98" title="Chicken zinger" class="food_pic"><td onclick="order()"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-kZdtSI-OC_FCkU1v6geRsvASJskGHOBZpQ&usqp=CAU" title="Rice Bowl" class="food_pic"><td onclick="order()"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlwT7AkDODBjP4xm3LwLng5LdzvCHSLTsUnQ&usqp=CAU" title="Big 8(4 pc smoky grilled, 4 pc crispy chicken)" class="food_pic"><td onclick="order()"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlFH02mdGA4u6x2Y0ImBAEQ4tK-yGAaOz-Lg&usqp=CAU" title="popcorn chicken" class="food_pic"></tr>
+                <tr><td onclick="order()"><img src="https://imgstaticcontent.lbb.in/lbbnew/wp-content/uploads/sites/2/2018/06/31154801/LittleItaly5.jpg" title="Classic Bruschettas" class="food_pic"><td onclick="order()"><img src="https://media2.picsearch.com/is?OaYF4ejr_Ug8N-5kIAJ2jfYQGElHYAa8A7cev5l3a1c&height=255" title="Risotto" class="food_pic"><td onclick="order()"><img src="https://travelsecretsmag.com/wp-content/uploads/2016/02/Little-Italy-3.jpg" title="Lasagna" class="food_pic"><td onclick="order()"><img src="https://foxeslovelemons.com/wp-content/uploads/2014/02/Italian-Enchiladas1-720x540.jpg" title="Veg Enchiladas" class="food_pic"></tr>
+                <tr><td onclick="order()"><img src="https://api.pizzahut.io/v1/content/en-in/in-1/images/pizza/margherita.4647e1fea738978b7afbce736861a2e6.1.jpg" title="Veg margherita" class="food_pic"><td onclick="order()"><img src="https://api.pizzahut.io/v1/content/en-in/in-1/images/pizza/spiced-paneer.fc7440f47b09623563e03a8408749bef.1.jpg" title="Veg Makhani" class="food_pic"><td onclick="order()"><img src="https://api.pizzahut.io/v1/content/en-in/in-1/images/pizza/spiced-chicken-meatballs.4de54b69a054cef8a9a67fd4979711bb.1.jpg" title="Chicken Keema" class="food_pic"><td onclick="order()"><img src="https://api.pizzahut.io/v1/content/en-in/in-1/images/pizza/chicken-pepperoni.05cf3dca3d68a0b9857b1c2a8d89f180.1.jpg" title="Pepperoni" class="food_pic"></tr>
+                <tr><td onclick="order()"><img src="https://static.toiimg.com/thumb/55048826.cms?imgsize=392932&width=175&height=175" title="KAJU BARFI" class="food_pic"><td onclick="order()"><img src="https://img-global.cpcdn.com/recipes/a4acfd98b307e5c3/175x175cq70/photo.jpg" title="Malai sandwich" class="food_pic"><td onclick="order()"><img src="https://www.funfoodfrolic.com/wp-content/uploads/2020/07/Gulab-Jamun-Thumbnail.jpg" title="Gulab Jamun" class="food_pic"><td onclick="order()"><img src="https://www.spiceupthecurry.com/wp-content/uploads/2020/08/rasmalai-recipe-1.jpg" title="Rasmalai" class="food_pic"></tr>
+                
+            </table><br><br>
+            <h1 class="specials" id="price">PRICES :</h1>
+            <table border="10" cellpadding="15px" style="border: black;padding: 20px;background-color: rgba(255, 166, 0, 0.65);font-family: Arial, Helvetica, sans-serif;border-radius: 26px;margin: 20px;">
+                <tr style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;"><th>ITEM</th><td>Crispy Veg</td><td>Crispy chicken</td><td>Spicy Non-veg meal</td><td>Veg-Double Party</td><td>Chicken zinger</td><td>Rice Bowl</td><td>Big 8</td><td>Pocorn Chicken</td><td>Classic Bruschettas</td><td>Risotto</td><td>Lassanga</td></tr>
+                <tr><th>Price</th><td>Rs.47</td><td>Rs.67</td><td>Rs.350</td><td>Rs.400</td><td>Rs.150</td><td>Rs.165</td><td>Rs.449</td><td>Rs.200</td><td>Rs.299</td><td>Rs.459</td><td>Rs.499</td></tr>
+                <tr><td>&#127789</td><td>&#127790</td><td>&#127828</td><td>&#127829</td><td>&#127830</td><td>&#127831</td><td>&#127839</td><td>&#127848</td><td>&#127849</td><td>&#127854</td><td>&#127856</td><td>&#127865</td></tr>
+                <tr style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;"><th>ITEM</th><td>Veg Enchiladas</td><td>Veg margherita</td><td>Veg Makhani</td><td>Chicken Keema</td><td>Pepperoni</td><td>Kaju Barfi</td><td>Malai Sandwithch</td><td>Gulab Jamun</td><td>Rasmalai</td></tr>
+                <tr><th>Price</th><td>Rs.549</td><td>Rs.199</td><td>Rs.399</td><td>Rs.399</td><td>Rs.349</td><td>560/- Per kg</td><td>600/- Per kg</td><td>200/- Per kg</td><td>250/- Per kg</td></tr>
+            </table>
+            
+            <hr color="orange"><hr color="orange">
+              
+            <h1 class="specials">Cities we deliver to:</h1>
+            <table border="10" cellpadding="15px" style="border: black;padding: 20px;background-color: rgba(255, 166, 0, 0.65);font-family: Arial, Helvetica, sans-serif;border-radius: 26px;margin: 20px;">
+                <tr><td><button name="Mumbai" onclick="city(name)" class="button">Mumbai</button></td><td><button name="Delhi" onclick="city(name)" class="button">Delhi</button></td><td><button name="Pune" onclick="city(name)" class="button">Pune</button></td><td><button name="Banglore" onclick="city(name)" class="button">Banglore</button></td><td><button name="Coiambatore" onclick="city(name)" class="button">Coiambatore</button></td><td><button name="Udaipur" onclick="city(name)" class="button">Udaipur</button></td><td><button name="Haridwar" onclick="city(name)" class="button">Haridwar</button></td><td><button name="Pushkar" onclick="city(name)" class="button">Pushkar</button></td></tr>
+                <tr><td><button name="Jaipur" onclick="city(name)" class="button">Jaipur</button></td><td><button name="Guwahati" onclick="city(name)" class="button">Guwahati</button></td><td><button name="Mysore" onclick="city(name)" class="button">Mysore</button></td><td><button name="Ahmedabad" onclick="city(name)" class="button">Ahmedabad</button></td><td><button name="Amaravati" onclick="city(name)" class="button">Amaravati</button></td><td><button name="Chennai" onclick="city(name)" class="button">Chennai</button></td><td><button name="Puducherry" onclick="city(name)" class="button">Puducherry</button></td><td><button name="Agra" onclick="city(name)" class="button">Agra</button></td></tr>
+                <tr><td><button name="Patna" onclick="city(name)" class="button">Patna</button></td><td><button name="Manglore" onclick="city(name)" class="button">Manglore</button></td><td><button name="Bhopal" onclick="city(name)" class="button">Bhopal</button></td><td><button name="Nashik" onclick="city(name)" class="button">Nashik</button></td><td><button name="Vijayawada" onclick="city(name)" class="button">Vijayawada</button></td><td><button name="Goa" onclick="city(name)" class="button">Goa</button></td><td><button name="Kakinada" onclick="city(name)" class="button">Kakinada</button></td><td><button name="Dehradun" onclick="city(name)" class="button">Dehradun</button></td></tr>
+                <tr><td><button name="Raipur" onclick="city(name)" class="button">Raipur</button></td><td><button name="Kochi" onclick="city(name)" class="button">Kochi</button></td><td><button name="Kota" onclick="city(name)" class="button">Kota</button></td><td><button name="Leh" onclick="city(name)" class="button">Leh</button></td><td><button name="Rajkot" onclick="city(name)" class="button">Rajkot</button></td><td><button name="Hyderabad" onclick="city(name)" class="button">Hyderabad</button></td><td><button name="Kolkata" onclick="city(name)" class="button">Kolkata</button></td><td><button name="Lucknow" onclick="city(name)" class="button">Lucknow</button></td></tr>
+                <tr><td><button name="Thrissur" onclick="city(name)" class="button">Thrissur</button></td><td><button name="Vadodra" onclick="city(name)" class="button">Vadodra</button></td><td><button name="Manali" onclick="city(name)" class="button">Manali</button></td><td><button name="Ooty" onclick="city(name)" class="button">Ooty</button></td><td><button name="Jammu" onclick="city(name)" class="button">Jammu</button></td><td><button name="Madurai" onclick="city(name)" class="button">Madurai</button></td><td><button name="Cuttak" onclick="city(name)" class="button">Cuttak</button></td><td><button name="Mussorie" onclick="city(name)" class="button">Mussorie</button></td></tr>
+                <tr><td><button name="Gorakhpur" onclick="city(name)" class="button">Gorakhpur</button></td><td><button name="Manipal" onclick="city(name)" class="button">Manipal</button></td><td><button name="Pallakad" onclick="city(name)" class="button">Pallakad</button></td><td><button name="Ranchi" onclick="city(name)" class="button">Ranchi</button></td><td colspan="4"><b style="color: white;"><u>CAN YOU FIND YOUR CITY IN THE TABLE ?</u></b><button class="button" name="yes" ondblclick="confirm(name)">YES</button><button class="button" name="no" ondblclick="confirm(name)">NO</button></td></tr>
+            </table>
+
+            <hr color="orange"><hr color="orange">
+                <h1 id="abtus" class="specials">About us:</h1>
+                <ul style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-size: 20px;color: rgb(0, 0, 0);">
+                    <li>We <b>"Food Ordering System"</b> are one of the best food delivering companies in the country.</li>
+                    <li>We are in collaboration with companies like KFC,Pizza hut,Dominos,McDonalds.</li>
+                    <li>We are one of few companies which deliver to every corner of a city.</li>
+                    <li><u><b>Covid Regulations:</b></u><ol>
+                        <li>Due to the recent devastation due to covid we are making sure that the customers are delevered food safely.</li>
+                        <li>Every person working for our company are being tested regularly.</li>
+                        <li>Every item which is between the start of delivey and you is being sanized properly.</li>
+                        <li>So there is no need to worry about anything.</li>
+                    </ol></li>
+                    <li>Order now, Stay home, Stay safe.<b>Thank You.</b></li>
+                </ul>
+            
+            
+            <hr color="orange"><hr color="orange">
+            <marquee style="background-color: orangered;color: white;font-size: 40px;">&#128523 Order now and enjoy the exotic tastes at your home itself &#128525</marquee>
+            <hr color="orange"><hr color="orange">
+            <div style="background-color: black;color: white;">
+                <h3>A collaborative work of :</h3>
+                <ul>
+                    <li>Kavya</li>
+                    <li>Vaidehi</li>
+                    <li>Lohit</li>
+                    <li>Charan</li>
+                    <li>Serath</li>
+                </ul>
+            </div>
+        </body>
+    
+</html>

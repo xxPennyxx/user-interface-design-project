@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Order NOW from Little Italy!</title>
+            <style>
+                h1{font-family:Bahnschrift;font-size:80px;color:navy; background-color:rgb(163, 230, 8);}
+                h2{font-family:Bahnschrift SemiCondensed;font-size:30px;color: rgb(75, 71, 141);}
+                h3{font-family:Bahnschrift SemiCondensed;font-size:30px;color: green; background-color: thistle;}
+                h5{font-family:Bahnschrift SemiCondensed;font-size:25px;color:black;}
+                h4{font-family:Bahnschrift SemiCondensed;font-size:20px;color:black;}
+                p{font-family:Bahnschrift SemiCondensed;font-size:20px;color:maroon;}
+                body{
+                    background-attachment: fixed;
+                    background-size: 100%;
+                }
+                th,td{
+                    background-color: rgb(255, 212, 132);
+                }
+            </style>
+        <script type="text/javascript">
+        function redirect()
+{
+    document.location.href="checkoutpage.html";
+}
+function createBill(){
+var index=0;
+var items = ["null", "null", "null","null"];
+var quantities = ["null", "null", "null","null"];
+var prices = ["null", "null", "null","null"];					
+						
+var e1 = document.getElementById("item1");
+var itemselected1 = e1.options[e1.selectedIndex].value;
+if(itemselected1!="1"){
+items[index]=itemselected1;
+quantities[index] = document.getElementById("q1").value;
+if(itemselected1=="Classic Bruschettas")
+document.getElementById("p1").value=299;
+else if(itemselected1=="Risotto")
+document.getElementById("p1").value=459;
+else if(itemselected1=="Lasagna")
+document.getElementById("p1").value=499;
+else if(itemselected1=="Veg Enchiladas")
+document.getElementById("p1").value=549;
+else if(itemselected1=="Ravioli")
+document.getElementById("p1").value=549;
+else if(itemselected1=="Spaghetti")
+document.getElementById("p1").value=549;
+else if(itemselected1=="Tiramisu")
+document.getElementById("p1").value=399;
+else
+document.getElementById("p1").value=null;
+prices[index] = document.getElementById("p1").value;
+index++;
+}
+			
+
+var e2 = document.getElementById("item2");
+var itemselected2 = e2.options[e2.selectedIndex].value;
+if(itemselected2!="1"){
+items[index]=itemselected2;
+quantities[index] = document.getElementById("q2").value;
+if(itemselected2=="Classic Bruschettas")
+document.getElementById("p2").value=299;
+else if(itemselected2=="Risotto")
+document.getElementById("p2").value=459;
+else if(itemselected2=="Lasagna")
+document.getElementById("p2").value=499;
+else if(itemselected2=="Veg Enchiladas")
+document.getElementById("p2").value=549;
+else if(itemselected2=="Ravioli")
+document.getElementById("p2").value=549;
+else if(itemselected2=="Spaghetti")
+document.getElementById("p2").value=549;
+else if(itemselected2=="Tiramisu")
+document.getElementById("p2").value=399;
+else
+document.getElementById("p2").value=null;
+prices[index] = document.getElementById("p2").value;
+index++;
+}
+
+var e3 = document.getElementById("item3");
+var itemselected3 = e3.options[e3.selectedIndex].value;
+if(itemselected3!="1"){
+items[index]=itemselected3;
+quantities[index] = document.getElementById("q3").value;
+if(itemselected3=="Classic Bruschettas")
+document.getElementById("p3").value=299;
+else if(itemselected3=="Risotto")
+document.getElementById("p3").value=459;
+else if(itemselected3=="Lasagna")
+document.getElementById("p3").value=499;
+else if(itemselected3=="Veg Enchiladas")
+document.getElementById("p3").value=549;
+else if(itemselected3=="Ravioli")
+document.getElementById("p3").value=549;
+else if(itemselected3=="Spaghetti")
+document.getElementById("p3").value=549;
+else if(itemselected3=="Tiramisu")
+document.getElementById("p3").value=399;
+else
+document.getElementById("p3").value=null;
+prices[index] = document.getElementById("p3").value;
+index++;
+}
+
+var e4 = document.getElementById("item4");
+itemselected4 = e4.options[e4.selectedIndex].value;
+if(itemselected4!="1"){
+items[index]=itemselected4;
+quantities[index] = document.getElementById("q4").value;
+if(itemselected4=="Classic Bruschettas")
+document.getElementById("p4").value=299;
+else if(itemselected4=="Risotto")
+document.getElementById("p4").value=459;
+else if(itemselected4=="Lasagna")
+document.getElementById("p4").value=499;
+else if(itemselected4=="Veg Enchiladas")
+document.getElementById("p4").value=549;
+else if(itemselected4=="Ravioli")
+document.getElementById("p4").value=549;
+else if(itemselected4=="Spaghetti")
+document.getElementById("p4").value=549;
+else if(itemselected4=="Tiramisu")
+document.getElementById("p4").value=399;
+else
+document.getElementById("p4").value=null;
+prices[index] = document.getElementById("p4").value;
+index++;
+}
+
+var fTot=0;
+strt(1);
+for(var i=0;i<index;i++){
+document.write("<tr>");
+createtbl(items[i]);
+createtbl(quantities[i]);
+createtbl(prices[i]);
+var tot=parseInt(quantities[i])*parseInt(prices[i]);
+document.write("<td>"+tot+"</td>");
+fTot+=tot;
+document.write("</tr>");
+}
+document.write("<tr><td colspan=\"3\"><strong>GRAND TOTAL</strong></td><td>"+fTot+"</td><tr>");
+strt(2);	
+}
+function createtbl(x){		
+document.write("<td>"+x+"</td>");
+}
+
+function strt(n){
+if(n==1){
+document.writeln("<h1 style=\"text-align:center;\">Little Italy Bill</h1>");
+document.writeln("<table width=\"90%\" border=\"1\">");
+document.writeln("<tr><th>ITEMS</th><th>QUANTITY</th><th>PRICE</th><th>Total</th></tr>");
+}
+	else
+	document.write("</table>");
+}
+
+function createTot(x,y){
+var tot=parseInt(x)*parseInt(y);
+document.write("<td>"+tot+"</td>");
+}
+            </script>
+        </script>
+
+    </head>
+    <body background="https://images.all-free-download.com/images/graphiclarge/seamless_pattern_food_312943.jpg">
+        <img src="https://static.wixstatic.com/media/cbebf4_ddf3b8adfad3461281f84b3c18becd0f~mv2.png/v1/fill/w_215,h_106,al_c,q_85,usm_0.66_1.00_0.01/Little%20Italy%20-%20Logo.webp" height="150" width="350"></img>      
+        <img src="https://static.wixstatic.com/media/cbebf4_f3ad74814ace4059a6f2f45b90b70836~mv2_d_3600_2400_s_4_2.jpg/v1/fill/w_533,h_929,al_c,q_85,usm_0.66_1.00_0.01/cbebf4_f3ad74814ace4059a6f2f45b90b70836~mv2_d_3600_2400_s_4_2.webp" height="150" width="200"></img>     
+        <img src="https://static.wixstatic.com/media/37bf69_582365bce36647d89fcd7804b5001e87~mv2.jpg/v1/fill/w_1899,h_468,al_c,q_85,usm_0.66_1.00_0.01/37bf69_582365bce36647d89fcd7804b5001e87~mv2.webp" height="150" width="450"></img>
+        <img src="https://b.zmtcdn.com/data/pictures/2/34182/b61811fd24b9bbf4105851283e821e05.jpg?output-format=webp&fit=around|771.75:416.25&crop=771.75:416.25;*,*" height="150" width="225"></img>
+       <img src="https://threebestrated.in/images/LittleItaly-Indore-MP.jpeg" height=150 width=250>  <hr color="red" height="80">
+
+        <h1>LITTLE ITALY</h1>
+        <h3> AVAILABLE CHOICES FOR DELIVERY:</h3>
+        <table cellspacing=50>
+            <tr>
+                <td> <img src="https://imgstaticcontent.lbb.in/lbbnew/wp-content/uploads/sites/2/2018/06/31154801/LittleItaly5.jpg" height="300" width="500"></img></td>
+                <td> <h2> Classic Bruschettas </h2><h5> Small bread pieces with tomatoes, coriander, cheese and black beans toppings.</h5> 
+                    <p> Rs. 299</p>
+                    
+                </td>
+            </tr>
+            <tr>
+                <td> <img src="https://media2.picsearch.com/is?OaYF4ejr_Ug8N-5kIAJ2jfYQGElHYAa8A7cev5l3a1c&height=255" height="300" width="500"></img></td>
+                <td> <h2> Risotto </h2><h5> A popular Italian rice-and-cheese dish with Italian herbs and spices, bell pepper, tomato and jalapeno.</h5> 
+                    <p> Rs. 459</p>
+                   
+                    
+                </td>
+            </tr>
+            <tr>
+                <td> <img src="https://travelsecretsmag.com/wp-content/uploads/2016/02/Little-Italy-3.jpg" height="300" width="500"></img></td>
+                <td> <h2> Lasagna </h2><h5> A baked dish containing layers of pasta sheets with cheese, a seasoned sauce of tomatoes, black beans and assorted vegetables. </h5> 
+                    <p> Rs. 499</p>
+                   
+                </td>
+            </tr>
+            <tr>
+                <td> <img src="https://foxeslovelemons.com/wp-content/uploads/2014/02/Italian-Enchiladas1-720x540.jpg" height="300" width="500"></img></td>
+                <td> <h2> Veg Enchiladas </h2><h5>Tortillas with a filling of cheese and vegetables served with chilli sauce.</h5> 
+                    <p> Rs. 549</p>
+                   
+                    
+                </td>
+            </tr>
+            <tr>
+                <td> <img src="https://imagesvc.meredithcorp.io/v3/jumpstartpure/image?url=https://timeincsecure-a.akamaihd.net/rtmp_uds/429048911/201806/2860/429048911_5798102596001_5798101558001-vs.jpg?pubId=1260616200&videoId=5793422078001&w=1280&h=720&q=90&c=cc" height="300" width="500"></img></td>
+                <td> <h2> Ravioli </h2><h5>Square-shaped pasta mini-pockets with cheese sauce and assorted vegetables. </h5> 
+                    <p> Rs. 549</p>
+                    
+                </td>
+            </tr>
+            <tr>
+                <td> <img src="https://images.indulgexpress.com/uploads/user/imagelibrary/2020/4/3/original/pasta.jpg" height="300" width="500"></img></td>
+                <td> <h2> Spaghetti </h2><h5>Long strings of pasta in tomato sauce with vegetables. </h5> 
+                    <p> Rs. 549</p>
+                   
+                    
+                </td>
+            </tr>
+            <tr>
+                <td> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Tiramisu_-_Raffaele_Diomede.jpg/1200px-Tiramisu_-_Raffaele_Diomede.jpg" height=300 width=500>
+                <td> <h2> Tiramisu </h2><h5> Classic Italian dessert made of eggs, mascarpone cheese and finger-shaped biscuits flavoured with coffee and cocoa. </h5> 
+                    <p> Rs. 399</p>
+                   
+                    
+                </td>
+            </tr>
+        </table>
+        <center>
+        <h2>Order Form</h2>
+        <h4>
+            <table width="40%" cellspacing=10 cellpadding=10 style="background-color:rgb(255, 102, 128);margin-left: 40px;">  <tr>
+            <td>Branch : </td>
+            <td> 
+            <select> 
+            <option>--Select Item--</option>
+            <option>Ahmedabad</option>
+            <option>Bengaluru</option> 
+            <option>Chandigarh</option> 
+            <option>Chennai</option> 
+            <option>Coimbatore</option> 
+            <option>Delhi</option> 
+            <option>Guwahati</option> 
+            <option>Hyderabad</option> 
+            <option>Jaipur</option> 
+            <option>Kolkata</option> 
+            <option>Lucknow</option> 
+            <option>Mumbai</option> 
+            <option>Pune</option> 
+            <option>Trivandrum</option> 
+            </select>
+            </td> 
+            
+            <h4>
+            <form name="tblform" >
+                <table width="80%" cellspacing=10 cellpadding=10 id="alignment" style="background-color: rgb(54, 67, 253);" >
+                <tr>
+                <th colspan=2><p>Food Item</p></th>
+               
+                <th><p>Quantity</p></th>
+                <th><p style="display:none">Price</p></th> 
+                </tr>
+                <tr> 
+                <td>Item 1:</td> 
+                <td>
+                <select id="item1">
+                    <option value="1">--Select Item--</option> 
+                    <option value="Classic Bruschettas">Classic Bruschettas</option> 
+                    <option value="Risotto">Risotto</option> 
+                    <option value="Lasagna">Lasagna</option> 
+                    <option value="Veg Enchiladas">Veg Enchiladas</option> 
+                    <option value="Ravioli">Ravioli</option> 
+                    <option value="Spaghetti">Spaghetti</option> 
+                    <option value="Tiramisu">Tiramisu</option> 
+                </select>
+                </td> 
+                <td><input type="number" value="0" id="q1"></td>
+                <td><input type="text" id="p1"style="display:none"></td>
+                </tr>   
+                <tr>
+                <td>Item 2:</td>
+                <td>
+                <select id="item2"> 
+                    <option value="1">--Select Item--</option> 
+                    <option value="Classic Bruschettas">Classic Bruschettas</option> 
+                    <option value="Risotto">Risotto</option> 
+                    <option value="Lasagna">Lasagna</option> 
+                    <option value="Veg Enchiladas">Veg Enchiladas</option> 
+                    <option value="Ravioli">Ravioli</option> 
+                    <option value="Spaghetti">Spaghetti</option> 
+                    <option value="Tiramisu">Tiramisu</option> 
+                </select>
+                </td>
+                <td><input  type="number" value="0" id="q2"></td>  
+                <td><input type="text"  id="p2"style="display:none"></td>  
+                </tr> 
+                <tr>
+                <td>Item 3:</td>
+                <td><select id="item3">  
+                    <option value="1">--Select Item--</option> 
+                    <option value="Classic Bruschettas">Classic Bruschettas</option> 
+                    <option value="Risotto">Risotto</option> 
+                    <option value="Lasagna">Lasagna</option> 
+                    <option value="Veg Enchiladas">Veg Enchiladas</option> 
+                    <option value="Ravioli">Ravioli</option> 
+                    <option value="Spaghetti">Spaghetti</option> 
+                    <option value="Tiramisu">Tiramisu</option> 
+                </select>
+                </td>
+                <td><input type="number" value="0" id="q3"></td>
+                <td><input type="text"  id="p3"style="display:none"></td> 
+                </tr> 
+                <tr>
+                <td>Item 4:</td>
+                <td><select id="item4">   
+                    <option value="1">--Select Item--</option> 
+                    <option value="Classic Bruschettas">Classic Bruschettas</option> 
+                    <option value="Risotto">Risotto</option> 
+                    <option value="Lasagna">Lasagna</option> 
+                    <option value="Veg Enchiladas">Veg Enchiladas</option> 
+                    <option value="Ravioli">Ravioli</option> 
+                    <option value="Spaghetti">Spaghetti</option> 
+                    <option value="Tiramisu">Tiramisu</option>  
+                </select>
+                </td>
+                <td><input type="number" value="0" id="q4"></td>
+                <td><input type="text"  id="p4" style="display:none"></td> 
+                </tr>    
+                <tr>
+                <td></td> 
+                <td><input type="button" class="button" value="Confirm Order" onclick=redirect()></td> 
+                <td><input type="submit" class="button" value="Create Bill" onclick=createBill()></td>
+                <td><input type="reset" class="button" value="Clear"></td>
+                </tr>
+                </table>
+                </form>
+            </h4></center>
+    </body>
+</html>

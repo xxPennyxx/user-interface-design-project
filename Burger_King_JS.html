@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+<head>
+    <title>Burger King</title>
+    <style>
+        h1{font-family:Bahnschrift;font-size:80px;color:rgb(170, 38, 5); background-color:cyan;}
+        h2{font-family:Bahnschrift SemiCondensed;font-size:30px;color: rgb(75, 71, 141);}
+        h3{font-family:Bahnschrift SemiCondensed;font-size:30px;color: green;}
+        h5{font-family:Bahnschrift SemiCondensed;font-size:25px;color: rgba(83, 6, 155, 0.918);background-color: chocolate;}
+        h4{font-family:Bahnschrift SemiCondensed;font-size:20px;color:black;background-color: brown;text-align: center;}
+        p{font-family:Bahnschrift SemiCondensed;font-size:25px;color:red;}
+    </style>
+    <script>
+        function createBill(){
+        var index=0;
+        var items = ["null", "null", "null","null"];
+        var quantities = ["null", "null", "null","null"];
+        var prices = ["null", "null", "null","null"];					
+						
+var e1 = document.getElementById("item1");
+var itemselected1 = e1.options[e1.selectedIndex].value;
+if(itemselected1!="1"){
+items[index]=itemselected1;
+quantities[index] = document.getElementById("q1").value;
+if(itemselected1=="crispy veg")
+document.getElementById("p1").value=47;
+else if(itemselected1=="crispy chicken")
+document.getElementById("p1").value=67;
+else if(itemselected1=="crunchy veg whooper")
+document.getElementById("p1").value=136;
+else if(itemselected1=="spicy chicken whooper")
+document.getElementById("p1").value=168;
+else if(itemselected1=="simple veg meel")
+document.getElementById("p1").value=320;
+else if(itemselected1=="spicy non veg meel")
+document.getElementById("p1").value=350;
+else if(itemselected1=="veg doublr party")
+document.getElementById("p1").value=400;
+else if(itemselected1=="whooper party")
+document.getElementById("p1").value=450;
+else
+document.getElementById("p1").value=null;
+prices[index] = document.getElementById("p1").value;
+index++;
+}
+
+var e2 = document.getElementById("item2");
+var itemselected2 = e2.options[e2.selectedIndex].value;
+if(itemselected2!="1"){
+items[index]=itemselected2;
+quantities[index] = document.getElementById("q2").value;
+if(itemselected2=="crispy veg")
+document.getElementById("p2").value=47;
+else if(itemselected2=="crispy chicken")
+document.getElementById("p2").value=67;
+else if(itemselected2=="crunchy veg whooper")
+document.getElementById("p2").value=136;
+else if(itemselected2=="spicy chicken whooper")
+document.getElementById("p2").value=168;
+else if(itemselected2=="simple veg meel")
+document.getElementById("p2").value=320;
+else if(itemselected2=="spicy non veg meel")
+document.getElementById("p2").value=350;
+else if(itemselected2=="veg doublr party")
+document.getElementById("p2").value=400;
+else if(itemselected2=="whooper party")
+document.getElementById("p2").value=450;
+else
+document.getElementById2("p2").value=null;
+prices[index] = document.getElementById("p2").value;
+index++;
+}
+
+var e3 = document.getElementById("item3");
+var itemselected3 = e3.options[e3.selectedIndex].value;
+if(itemselected3!="1"){
+items[index]=itemselected3;
+quantities[index] = document.getElementById("q3").value;
+if(itemselected3=="crispy veg")
+document.getElementById("p3").value=47;
+else if(itemselected3=="crispy chicken")
+document.getElementById("p3").value=67;
+else if(itemselected3=="crunchy veg whooper")
+document.getElementById("p3").value=136;
+else if(itemselected3=="spicy chicken whooper")
+document.getElementById("p3").value=168;
+else if(itemselected3=="simple veg meel")
+document.getElementById("p3").value=320;
+else if(itemselected3=="spicy non veg meel")
+document.getElementById("p3").value=350;
+else if(itemselected3=="veg doublr party")
+document.getElementById("p3").value=400;
+else if(itemselected3=="whooper party")
+document.getElementById("p3").value=450;
+else
+document.getElementById3("p3").value=null;
+prices[index] = document.getElementById("p3").value;
+index++;
+}
+
+var e4 = document.getElementById("item4");
+var itemselected4 = e4.options[e4.selectedIndex].value;
+if(itemselected4!="1"){
+items[index]=itemselected4;
+quantities[index] = document.getElementById("q4").value;
+if(itemselected4=="crispy veg")
+document.getElementById("p4").value=47;
+else if(itemselected4=="crispy chicken")
+document.getElementById("p4").value=67;
+else if(itemselected4=="crunchy veg whooper")
+document.getElementById("p4").value=136;
+else if(itemselected4=="spicy chicken whooper")
+document.getElementById("p4").value=168;
+else if(itemselected4=="simple veg meel")
+document.getElementById("p4").value=320;
+else if(itemselected4=="spicy non veg meel")
+document.getElementById("p4").value=350;
+else if(itemselected4=="veg doublr party")
+document.getElementById("p4").value=400;
+else if(itemselected4=="whooper party")
+document.getElementById("p4").value=450;
+else
+document.getElementById("p4").value=null;
+prices[index] = document.getElementById("p4").value;
+index++;
+}
+
+var fTot=0;
+strt(1);
+for(var i=0;i<index;i++){
+document.write("<tr>");
+createtbl(items[i]);
+createtbl(quantities[i]);
+createtbl(prices[i]);
+var tot=parseInt(quantities[i])*parseInt(prices[i]);
+document.write("<td>"+tot+"</td>");
+fTot+=tot;
+document.write("</tr>");
+}
+document.write("<tr><td colspan=\"3\"><strong>GRAND TOTAL</strong></td><td>"+fTot+"</td><tr>");
+strt(2);	
+}
+function createtbl(x){		
+document.write("<td>"+x+"</td>");
+}
+
+function strt(n){
+if(n==1){
+document.writeln("<h1 style=\"text-align:center;\">The Bill</h1>");
+document.writeln("<table width=\"90%\" border=\"1\">");
+document.writeln("<tr><th>ITEMS</th><th>QUANTITY</th><th>PRICE</th><th>Total</th></tr>");
+}
+	else
+	document.write("</table>");
+}
+
+function createTot(x,y){
+var tot=parseInt(x)*parseInt(y);
+document.write("<td>"+tot+"</td>");
+}
+function redirect() {
+    window.location.href = "checkoutpage.html";
+    
+}
+    </script>
+    <head>
+        <body background="https://previews.123rf.com/images/krekdm/krekdm1610/krekdm161000233/67736852-hand-drawn-vector-seamless-fast-food-pattern-sketch-doodle-food-elements-can-be-used-for-wallpaper-w.jpg" style="background-repeat: no-repeat;background-size:100% 100%">
+            <center><h1>Burger King</h1></center>
+        <table cellspacing="100px">
+            <tr><td><img src="https://priory-shopping.co.uk/wp-content/uploads/2016/02/burger-king-logo.jpg" style="box-shadow: 1px 1px 20px black;border-radius: 20px;height: 300px;width: 350px;"></img></td>
+            <td><img src="https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fspecials-images.forbesimg.com%2Fdam%2Fimageserve%2F1058912512%2F960x0.jpg%3Ffit%3Dscale" style="box-shadow: 1px 1px 20px black;border-radius: 20px;height: 300px;width: 350px;"></img></td></tr>     
+        </table>
+            <hr color="red" height="80">
+            <h3> AVAILABLE FOOD ORDERS ARE:</h3>
+
+        <table cellspacing="30px">
+            <tr>
+                <td><img src="https://cdn.livekindly.co/wp-content/uploads/2019/10/vegan-plant-based-burger-king.jpg" title="Crispy Veg" style="box-shadow: 1px 1px 20px black;border-radius: 20px;height: 200px;width: 250px;"></td>
+                <td><h2>Crispy Veg</h2>
+                <p>Rs.47</p></td>
+
+                <td><img src="https://www.frozenfoodeurope.com/wp-content/uploads/2017/03/Crispy.jpg" title="Crispy chicken" style="box-shadow: 1px 1px 20px black;border-radius: 20px;height: 200px;width: 250px;"></td>
+                <td><h2>Crispy Chicken</h2>
+                <p>Rs.67</p></td>
+            </tr>
+
+            <tr>
+                <td><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzljscjh3NZ6RWv0n0fCtxI7vBYT0gk2-z_w&usqp=CAU" title="Crunchy Veg whooper" style="box-shadow: 1px 1px 20px black;border-radius: 20px;height: 200px;width: 250px;"></td>
+                <td><h2>Crunchy Veg Whopper </h2>
+                <p> Rs.136 </p></td>
+
+                <td><img src="https://www.fastfoodpost.com/wp-content/uploads/2019/04/Burger-King-Angry-Whopper-hero.jpg"title="Spicy chicken whooper" style="box-shadow: 1px 1px 20px black;border-radius: 20px;height: 200px;width: 250px;" ></td>
+                <td><h2>Spicy chicken Whopper </h2>
+                <p> Rs.168 </p></td>
+            </tr></table><br>
+            <hr color="red" height="80">
+        <h3>Crazy Combos</h3>
+        <table cellspacing="30px">   
+            <tr>
+                <td><img src="https://www.africacapitaldigest.com/wordpress/wp-content/uploads/2020/02/Burger-King-Burger.jpeg"title="Simple Veg meal" style="box-shadow: 1px 1px 20px black;border-radius: 20px;height: 200px;width: 250px;"></td>
+                <td><h2>Simple Veg Meal </h2>
+                <h5>1 Veg Burger+ 1 Medium Fries+ 1 coke</h5>
+                <p> Rs.320 </p></td>
+
+                <td><img src="https://i.insider.com/5d2c933b21a86101774c3c3e?width=700" title="Spicy Non-veg meal" style="box-shadow: 1px 1px 20px black;border-radius: 20px;height: 200px;width: 250px;"></td>
+                <td><h2>Spicy Non-veg meal</h2>
+                <h5>1 Non Veg Burger+ 1 Medium Fries+ 1 coke</h5>
+                <p>Rs.350</p></td>
+            </tr>
+
+            <tr>
+                <td><img src="https://burgerking-image.s3.amazonaws.com/16176882881x1119x540jpg" title="Veg double party" style="box-shadow: 1px 1px 20px black;border-radius: 20px;height: 200px;width: 250px;"></td>
+                <td><h2>Veg Double party</h2>
+                <h5>1 Veg Burger+1 veg whopper+ 1 Medium Fries+ 1 coke</h5>
+                <p>Rs.400</p></td>
+
+                <td><img src="http://mms.businesswire.com/media/20160531005102/en/527306/5/2for10WhopperMeal_highres.jpg"title="whooper party" style="box-shadow: 1px 1px 20px black;border-radius: 20px;height: 200px;width: 250px;" ></td>
+                <td><h2>whooper party </h2>
+                <h5>2 Non Veg whopper+ 1 Medium Fries+ 2 coke</h5>
+                <p> Rs.450 </p>
+            </tr></table><br>
+            <hr color="red" height="80">
+
+        <center><h2>Order Form</h2>
+        <H4><table cellspacing=10 cellpadding=10 style="background-color: cadetblue;" align="center" >
+            <tr><td>Branch: </td>
+            <td> <select> 
+            <option>--Select Item--</option>
+            <option>Ahmedabad</option>
+            <option>Bengaluru</option> 
+            <option>Chandigarh</option> 
+            <option>Chennai</option> 
+            <option>Coimbatore</option> 
+            <option>Delhi</option> 
+            <option>Guwahati</option> 
+            <option>Hyderabad</option> 
+            <option>Jaipur</option> 
+            <option>Kolkata</option> 
+            <option>Lucknow</option> 
+            <option>Mumbai</option> 
+            <option>Pune</option> 
+            <option>Trivandrum</option> 
+            </select></td></tr>
+        </table></H4></center> 
+        
+
+        <center><form name="tblform" >
+                <H4><table cellspacing=10 cellpadding=10 style="background-color: cadetblue;" align="center" >
+                <tr>
+                <th><p>Food Item</p></th>
+                <th><p>Quantity</p></th>
+                <th><p>Price</p></th> 
+                </tr>
+                <tr> <td>Item 1:</td> 
+                <td><select id="item1">
+                    <option value="1">--Select Item--</option> 
+                    <option value="crispy veg">crispy veg</option> 
+                    <option value="crispy chicken">crispy chicken</option> 
+                    <option value="crunchy veg whooper">crunchy veg whooper</option> 
+                    <option value="spicy chicken whooper">spicy chicken whooper</option> 
+                    <option value="Simple veg meel">Simple veg meel</option> 
+                    <option value="spicy non veg meel">spicy non veg meel</option> 
+                    <option value="veg double party">veg double party</option>
+                    <option value="whooper party">whooper party</option>
+                </select></td> 
+                <td><input type="number" value="0" id="q1"></td>
+                <td><input type="text" id="p1"style="display:none"></td></tr>
+            
+
+                <tr> <td>Item 2:</td> 
+                    <td><select id="item2">
+                        <option value="1">--Select Item--</option> 
+                        <option value="crispy veg">crispy veg</option> 
+                        <option value="crispy chicken">crispy chicken</option> 
+                        <option value="crunchy veg whooper">crunchy veg whooper</option> 
+                        <option value="spicy chicken whooper">spicy chicken whooper</option> 
+                        <option value="Simple veg meel">Simple veg meel</option> 
+                        <option value="spicy non veg meel">spicy non veg meel</option> 
+                        <option value="veg double party">veg double party</option>
+                        <option value="whooper party">whooper party</option>
+                    </select></td> 
+                    <td><input type="number" value="0" id="q2"></td>
+                    <td><input type="text" id="p2"style="display:none"></td></tr>
+    
+                    <tr> <td>Item 3:</td> 
+                        <td><select id="item3">
+                            <option value="1">--Select Item--</option> 
+                            <option value="crispy veg">crispy veg</option> 
+                            <option value="crispy chicken">crispy chicken</option> 
+                            <option value="crunchy veg whooper">crunchy veg whooper</option> 
+                            <option value="spicy chicken whooper">spicy chicken whooper</option> 
+                            <option value="Simple veg meel">Simple veg meel</option> 
+                            <option value="spicy non veg meel">spicy non veg meel</option> 
+                            <option value="veg double party">veg double party</option>
+                            <option value="whooper party">whooper party</option>
+                        </select></td> 
+                        <td><input type="number" value="0" id="q3"></td>
+                        <td><input type="text" id="p3"style="display:none"></td></tr>
+        
+                        <tr> <td>Item 4:</td> 
+                            <td><select id="item4">
+                                <option value="1">--Select Item--</option> 
+                                <option value="crispy veg">crispy veg</option> 
+                                <option value="crispy chicken">crispy chicken</option> 
+                                <option value="crunchy veg whooper">crunchy veg whooper</option> 
+                                <option value="spicy chicken whooper">spicy chicken whooper</option> 
+                                <option value="Simple veg meel">Simple veg meel</option> 
+                                <option value="spicy non veg meel">spicy non veg meel</option> 
+                                <option value="veg double party">veg double party</option>
+                                <option value="whooper party">whooper party</option>
+                            </select></td> 
+                            <td><input type="number" value="0" id="q4"></td>
+                            <td><input type="text" id="p4"style="display:none"></td></tr>
+            
+                            <tr>
+                                <td></td> 
+                                <td><input type="button" class="button" value="Confirm Order" onclick=redirect()></td> 
+                                <td><input type="submit" class="button" value="Create Bill" onclick=createBill()></td>
+                                <td><input type="reset" class="button" value="Clear"></td>
+                            </tr>
+                </table>
+            </form></H4></center>
+    </body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script>function onFocus(input)
+        {
+            input.style.background="cyan";
+            
+            
+        }
+        function onBlur(input){
+            input.style.background="white";
+        }
+        function validate(){
+            var fstname =document.getElementById("fname").value;
+            
+           
+            
+            if(fstname == "")
+            {
+                //fstname.style.border.input='solid 3px red';
+                window.alert('Please Enter your  Name');
+                document.getElementById("lblfname").style.visibility='visible';
+                return false;
+            }
+            
+           
+            else{
+                true;
+            }
+        }
+        function changeCursor(){
+            
+            document.getElementById("submit").style.cursor = "pointer";
+            document.getElementById("reset").style.cursor = "pointer";
+        }</script>
+    <meta charset="UTF-8" />
+    
+    <title>Thank You</title>
+    <style type = "text/css" media = "screen">
+        .container {
+            margin: 0px;
+            text-align: center;
+            border-style: solid;
+            border-width: 2px;
+            border-spacing: 10px;
+            
+        }
+        
+        .heading {
+            color: aqua;
+            font-size: 30px;
+            
+        }
+        
+        .success {
+            font-size: 20px;
+            
+        }
+        
+        h2 {
+            color: red;
+            font-size: 20px;
+        }
+        
+        .footer {
+            margin-top: 0px;
+            background-color: rgb(150, 128, 128);
+            text-align: center;
+            color: white;
+            padding: 8px;
+          
+        }
+        
+
+            ::placeholder {
+            color:pink;
+            opacity: 1; 
+        }
+        .survey {
+            text-align: center;
+            font-weight: bold;
+            font-size: 30px;
+            
+        }
+        input {
+           
+           padding: 12px 20px;
+           margin: 8px 0;
+           box-sizing: border-box;
+                     border: 2px solid pink;
+                     border-radius: 4px;
+                   }
+                
+    </style>
+</head>
+
+<body>
+    <div class="image">
+        
+    </div>
+    <div class="container">
+        <div class="heading">
+            <h1>THANK YOU</h1>
+        </div>
+        <div class="success">
+            <h3>Your order has been successfully processed</h3>
+        </div>
+        <div class="number">
+            <h3>Your order number is
+                <h2>4545454</h2>
+            </h3>
+        </div>
+        <div class="order">
+            <h3>You will recieve your order soon</h3>
+        </div>
+    </div>
+    <div class="survey"><b>A Quick Survey </b></div>
+    <form onsubmit="return validate();" style="text-align: left;" action="Welcome Page(JS).html"><br>
+    <table border="0"  cellspacing="80" cellpadding="10" style="background-color: azure; align-content: center;" align="center" >
+        <tr>
+            <th><h2><label ><div style="text-align:center; color: black;"><b> Name </b> <span title="This field is required" style="color: red;">*</span></label> </h2></th></div>
+               
+            
+            <td><input onfocus="onFocus(this)" onblur="onBlur(this)"  class="colour" size="height 50px width 100px" type="text" id="fname" name="fname" maxlength="20" placeholder="Your Name here"><label id="lblfname" style="color: crimson; visibility: hidden;"></label></td>
+        </tr>
+        
+        <tr>
+            <th><div  ><h2 style="color: black;">Which restaurant do you like the most in  <span title="This field is required" style="color: red;">*</span></h2> </label></th></h2> <br>
+            </th>
+                <td><label for="Pizza Hut"> <input type="radio" style="cursor: pointer; " name="Q2" required id="1"> Pizza Hut</label><br>
+            <label for="Little Italy"> <input type="radio" style="cursor: pointer; " name="Q2" required id="2">Little Italy</label><br> 
+            <label for="Burger King"> <input style="cursor: pointer; " type="radio" name="Q2" required id="3"> Burger King</label><br>
+            <label for="KFC"> <input style="cursor: pointer; " type="radio" name="Q2" required id="4"> KFC</label><br>
+            <label for="Sweet Magic"> <input style="cursor: pointer; " type="radio" name="Q2" required id="5"> Sweet Magic</label><br>
+           </div></td>
+        </tr>
+        <tr>
+            <th><h3>If you want to leave any comment</h3><h3>please leave here(Optional)</h3> </th>
+            <td> <textarea name="comment" id="comment" placeholder="Please leave your comment here" cols="30" rows="5"></textarea></td>
+        </tr>
+        <tr>
+            <td> <span title="This field is required" style="color: red;">*</span><i>-This indicates that the field is required</i> </td>
+        </tr>
+        <tr>
+            <td align="center"> <input style=" background-color: rgb(235, 18, 18);" onmouseover="changeCursor()" type="submit" name="" id="submit" ></td>
+            <td><input style="background: lightgreen;"  onmouseover="changeCursor()" type="reset" name="" id="reset"></td>
+        </tr>
+        
+       
+    </table></form>
+    <footer>
+        <div class="footer">
+            <p> ©Copyright 2021-2022. All Rights reserved </p>
+        </div>
+
+    </footer>
+</body>
+
+</html>
